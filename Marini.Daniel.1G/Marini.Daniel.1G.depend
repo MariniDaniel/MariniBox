@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1539044632 source:c:\users\alumno\desktop\marini.daniel.1g\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"Juegos.h"
+	"Clientes.h"
+
+1539045266 source:c:\users\alumno\desktop\marini.daniel.1g\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"Juegos.h"
+	"Clientes.h"
+
+1539044276 source:c:\users\alumno\desktop\marini.daniel.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"Clientes.h"
+	"Juegos.h"
+
+1539043387 c:\users\alumno\desktop\marini.daniel.1g\juegos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1539041967 c:\users\alumno\desktop\marini.daniel.1g\clientes.h
+
+1539039560 c:\users\alumno\desktop\marini.daniel.1g\validaciones.h
+
+1539042913 source:c:\users\alumno\desktop\marini.daniel.1g\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"Juegos.h"
+	"Clientes.h"
+
