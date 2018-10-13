@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1539376048 source:c:\users\dani\desktop\marini.daniel.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1539376031 c:\users\dani\desktop\marini.daniel.1g\validaciones.h
+
+1539391952 source:c:\users\alumno\desktop\marinibox-master\marini.daniel.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1539391939 c:\users\alumno\desktop\marinibox-master\marini.daniel.1g\validaciones.h
+
+1539391952 source:c:\users\alumno\desktop\marinibox-master\marini.daniel.1g\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
