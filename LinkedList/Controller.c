@@ -326,10 +326,15 @@ int controller_sortEmployee(LinkedList* pArrayListVendedor)
 int controller_saveAsText(char* path , LinkedList* pArrayListVendedor)
 {
     int ret;
+    char nombre[30];
     ret = RETURN_ERROR;
 
+    printf("\nIngrese el nombre que desea tener su archivo: \n\n");
+    scanf("%s",&nombre);
+    strcat(nombre,".csv");
+
     FILE* pFile;
-    pFile = fopen("nivel.csv", "w");
+    pFile = fopen(nombre, "w");
     Vendedor* vend;
 
 
