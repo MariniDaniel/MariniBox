@@ -7,30 +7,41 @@
 Vendedor* vendedor_new()/**  **/
 {
     Vendedor* vend;
+
     vend = (Vendedor*)malloc(sizeof(Vendedor));
-    vend->id = 0;
-    strcpy(vend->nombre, "");
-    vend->nivel = 0;
-    vend->cantProdVend = 0;
-    vend->montoVendido = 0;
-    vend->comision = 0;
 
     return vend;
 }
 
-/*
-Vendedor* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr)
+
+Vendedor* vendedor_newParametros(char* idStr,char* nombreStr, char* nivel, char* cantProdVendStr, char* montoVendido, char* comision)
 {
-    Vendedor* vend;
-    vend = (Vendedor*)malloc(sizeof(Vendedor));
-    vend->id = idStr;
-    strcpy(vend->nombre, nombreStr);
-    vend->horasTrabajadas = horasTrabajadasStr;
-    vend->sueldo = 0;
+    int auxId;
+    int auxProdcVend;
+    int auxNivel;
+    float auxMonto;
+    float auxComision;
+    Vendedor* vend = vendedor_new();
+
+    auxId=atoi(idStr);
+    auxProdcVend=atoi(cantProdVendStr);
+    auxNivel=atoi(nivel);
+    auxMonto=atof(montoVendido);
+    auxComision=atof(comision);
+
+
+
+    vendedor_setId(vend,auxId);
+    vendedor_setNombre(vend,nombreStr);
+    vendedor_setNivel(vend,auxNivel);
+    vendedor_setCantProdVend(vend,auxProdcVend);
+    vendedor_setMontoVendido(vend,auxMonto);
+    vendedor_setComision(vend,auxComision);
+
 
     return vend;
 }
-*/
+
 
 
 int vendedor_setId(Vendedor* this,int id)
@@ -135,9 +146,9 @@ int vendedor_getNivel(Vendedor* this,int* nivel)
     return ret;
 }
 
-int vendedor_setMontoVendido(Vendedor* this,float montoVendido)
+float vendedor_setMontoVendido(Vendedor* this,float montoVendido)
 {
-    int ret;
+    float ret;
     ret = RETURN_ERROR;
     if(this != NULL)
     {
@@ -160,9 +171,9 @@ int vendedor_getMontoVendido(Vendedor* this, float* montoVendido)
     return ret;
 }
 
-int vendedor_setComision(Vendedor* this,float comision)
+float vendedor_setComision(Vendedor* this,float comision)
 {
-    int ret;
+    float ret;
     ret = RETURN_ERROR;
     if(this != NULL)
     {

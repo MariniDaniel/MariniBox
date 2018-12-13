@@ -23,6 +23,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
     char nivelStr[6];
     char cantProdVendStr[10];
     char montoVendidoStr[10];
+    char comision[10];
 
 
 
@@ -38,13 +39,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
             }
             else
             {
-                Vendedor* vend = vendedor_new();
-                vend->id = atoi(idStr);
-                strcpy(vend->nombre, nombreStr);
-                vend->nivel = atoi(nivelStr);
-                vend->cantProdVend = atoi(cantProdVendStr);
-                vend->montoVendido = atof(montoVendidoStr);
-                vend->comision = 0;
+                Vendedor* vend = vendedor_newParametros(idStr,nombreStr,nivelStr,cantProdVendStr,montoVendidoStr,comision);
                 ll_add(pArrayListEmployee, vend);
             }
         }

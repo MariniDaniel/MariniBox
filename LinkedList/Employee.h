@@ -30,6 +30,10 @@ int vendedor_getSueldo(Vendedor* this,int* sueldo);
 void  vendedor_showEmployee(Vendedor* this);
 void  vendedor_showEmployees(Vendedor* this);
 
+float vendedor_setMontoVendido(Vendedor* this,float montoVendido);
+float vendedor_setComision(Vendedor* this,float comision);
+
+
 int vendedor_sortByName(void* vendedor, void* empleadoB);
 int vendedor_sortById(void* vendedor, void* empleadoB);
 int vendedor_sortByHsTrabajadas(void* vendedor, void* empleadoB);
