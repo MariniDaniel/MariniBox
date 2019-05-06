@@ -580,7 +580,6 @@ int mostrar_Libros(eLibro lista[], int tam)
     printf(" Codigo de libro       Codigo de Autor    Titulo\n\n");
     for(int i=0; i < tam; i++)
     {
-
             mostrar_libro(lista[i]);
             retorno=0;
     }
@@ -596,6 +595,28 @@ void mostrar_libro(eLibro libros)
 
 }
 
+int mostrar_Autores(eAutores lista[], int tam)
+{
+
+    int retorno=-1;
+
+    printf(" Codigo de Autor       Nombre de Autor    Apellido de Autor\n\n");
+    for(int i=0; i < tam; i++)
+    {
+            mostrar_Autor(lista[i]);
+            retorno=0;
+    }
+
+    return retorno;
+}
+
+void mostrar_Autor(eAutores autores)
+{
+
+
+    printf("%5d   %20s   %20s   \n", autores.CodigoAutor,autores.nombre,autores.apellido);
+
+}
 
 //De aca para abajo verificar
 /*int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)

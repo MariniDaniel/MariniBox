@@ -205,7 +205,13 @@ int modificar_Socios(eSocio lista[],int tam);
 int baja_Socios(eSocio lista[], int tam);
 
 int ordenar_Socios(eSocio lista[],int tam );
-
+//libros
 int mostrar_Libros(eLibro lista[], int tam);
+void mostrar_libro(eLibro libros);
+//autores
+int mostrar_Autores(eAutores lista[], int tam);
+void mostrar_Autor(eAutores autores);
+
+
 
 #endif // SOCIOS_H_INCLUDED

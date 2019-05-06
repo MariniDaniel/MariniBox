@@ -46,8 +46,9 @@ int main()
         printf("3- Modificar Socios \n");
         printf("4- Baja Socios \n");
         printf("5- Listar Libros \n");
-        printf("6-Prestamos no hecho\n");
-        printf("7- Salir  \n\n");
+        printf("6- Listar autores \n");
+        printf("7- Prestamos no hecho\n");
+        printf("8- Salir  \n\n");
         printf("Ingrese opcion:   ");
         fflush(stdin);
         scanf("%d", &opcion);
@@ -112,9 +113,11 @@ int main()
         case 5:
             mostrar_Libros(listaLibros,TAM_LIBROS);
             break;
-
-
         case 6:
+            mostrar_Autores(listaAutores,TAM_AUTORES);
+            break;
+
+        case 7:
             if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
             {
                 system("cls");
@@ -131,7 +134,7 @@ int main()
 
 
             break;
-        case 7:
+        case 8:
             printf("\nADIOS\n");
             break;
         default:

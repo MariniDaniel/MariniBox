@@ -64,7 +64,7 @@
 
 1557153924 c:\users\alumno\desktop\laboratorio1\parcial1\utn_input.h
 
-1557184823 source:c:\users\alumno\desktop\laboratorio1\parcial1\main.c
+1557185243 source:c:\users\alumno\desktop\laboratorio1\parcial1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -72,10 +72,10 @@
 	<conio.h>
 	"Socios.h"
 
-1557184823 c:\users\alumno\desktop\laboratorio1\parcial1\socios.h
+1557185243 c:\users\alumno\desktop\laboratorio1\parcial1\socios.h
 	"UTN_INPUT.h"
 
-1557184152 source:c:\users\alumno\desktop\laboratorio1\parcial1\socios.c
+1557185243 source:c:\users\alumno\desktop\laboratorio1\parcial1\socios.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
