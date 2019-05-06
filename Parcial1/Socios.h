@@ -211,6 +211,8 @@ void mostrar_libro(eLibro libros);
 //autores
 int mostrar_Autores(eAutores lista[], int tam);
 void mostrar_Autor(eAutores autores);
+//prestamos
+void cargarFecha_Prestamo(ePrestamo lista[],int indice);
 
 
 

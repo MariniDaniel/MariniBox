@@ -31,7 +31,7 @@ int main()
     inicializar_Socios(listaSocios,TAM_SOCIOS);
     init_Autores(listaAutores,TAM_AUTORES);
     init_Libros(listaLibros,TAM_LIBROS);
-
+    inicializar_Prestamo(listaPrestamos,TAM_PRESTAMOS);
 
 
 
@@ -122,7 +122,7 @@ int main()
             {
                 system("cls");
 
-                //alta_Prestamos()
+                alta_Prestamos(listaPrestamos,listaSocios,listaLibros,TAM_SOCIOS,TAM_LIBROS,TAM_PRESTAMOS);
 
 
             }

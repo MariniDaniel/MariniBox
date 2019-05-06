@@ -547,7 +547,7 @@ int inicializar_Prestamo(ePrestamo lista[], int tam)
 
 int buscarLibre_Prestamo(ePrestamo lista[], int tam)
 {
-    int indice = -1;
+     int indice = -1;
 
     for(int i=0; i < tam; i++)
     {
@@ -557,7 +557,6 @@ int buscarLibre_Prestamo(ePrestamo lista[], int tam)
             break;
         }
     }
-
     return indice;
 }
 
@@ -619,7 +618,7 @@ void mostrar_Autor(eAutores autores)
 }
 
 //De aca para abajo verificar
-/*int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)
+int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)
 {
 
     int indice;
@@ -641,21 +640,25 @@ void mostrar_Autor(eAutores autores)
 
     system("cls");
 
-    printf("ingrese codigo socio: ");
+    mostrar_Socios(listaSocio,tamSocio);
+    printf("\ningrese codigo socio: ");
     scanf("%d",&auxIdSocio);
+
 
     for(int i=0; i < tamSocio; i++)
     {
-        if(auxIdSocio[i]==listaSocio[i].codigoSocio )
+     //  if(auxIdSocio[i]==listaSocio[i].codigoSocio )
         {
             listaPrestamos[i].CodigoPrestamo;
         }
     }
 
+    mostrar_Libros(listaLibro,tamLibro);
     printf("ingrese codigo libro: ");
     scanf("%d",&auxIdLibro);
 
-    printf("ingrese fecha del prestamo: ");
+     printf("\nIngrese su fecha de ingreso\n\n");
+     cargarFecha_Prestamo(listaPrestamos,tamPrestamo);
 
 
     //separo
@@ -689,4 +692,26 @@ void mostrar_Autor(eAutores autores)
 
 
 
-}*/
+}
+
+void cargarFecha_Prestamo(ePrestamo lista[],int indice)
+{
+    int auxDia;
+    int auxMes;
+    int auxAnio;
+
+
+    getValidInt("Ingrese dia: ","\nPor favor ingrese un dia valido entre 1 y 30: \n",1,30,&auxDia);
+
+    lista[indice].fechaPrestamo.dia=auxDia;
+
+
+    getValidInt("Ingrese mes:","Por favor ingrese un mes valido entre 1 y 12: \n",1,12,&auxMes);
+
+    lista[indice].fechaPrestamo.mes=auxMes;
+
+
+    getValidInt("Ingrese anio: ","Por favor ingrese un anio valido entre 2000 y 2030: \n",2000,2030,&auxAnio);
+
+    lista[indice].fechaPrestamo.anio=auxAnio;
+}
