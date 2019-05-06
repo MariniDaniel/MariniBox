@@ -1,0 +1,85 @@
+# depslib dependency file v1.0
+1555926165 source:d:\galarza\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1555926261 d:\galarza\parcial1\socios.h
+	"UTN_INPUT.h"
+
+1555921232 source:d:\galarza\parcial1\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1555921232 d:\galarza\parcial1\utn_input.h
+
+1555926261 source:d:\galarza\parcial1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1557153924 source:c:\users\dani\desktop\tp-2018-master\tp-2018-master\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1557153924 c:\users\dani\desktop\tp-2018-master\tp-2018-master\parcial1\socios.h
+	"UTN_INPUT.h"
+
+1557153924 c:\users\dani\desktop\tp-2018-master\tp-2018-master\parcial1\utn_input.h
+
+1557153924 source:c:\users\dani\desktop\tp-2018-master\tp-2018-master\parcial1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1557153924 source:c:\users\dani\desktop\tp-2018-master\tp-2018-master\parcial1\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557182348 source:c:\users\alumno\desktop\laboratorio1\parcial1\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557153924 c:\users\alumno\desktop\laboratorio1\parcial1\utn_input.h
+
+1557184823 source:c:\users\alumno\desktop\laboratorio1\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1557184823 c:\users\alumno\desktop\laboratorio1\parcial1\socios.h
+	"UTN_INPUT.h"
+
+1557184152 source:c:\users\alumno\desktop\laboratorio1\parcial1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
