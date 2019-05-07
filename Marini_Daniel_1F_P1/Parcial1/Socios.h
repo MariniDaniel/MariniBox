@@ -216,6 +216,14 @@ void cargarFecha_Prestamo(ePrestamo lista[],int indice);
 void mostrar_Prestamo(ePrestamo prestamos);
 int mostrar_Prestamos(ePrestamo lista[], int tam);
 
+//informes
+void alquileresPorSocio(ePrestamo listaPrestamos[], int tamPrestamos,eSocio listaSocios[],int tamSocio, eLibro listaLibro[],int tamLibros);
+void mostrarPrestamos(ePrestamo prestamoMostrar,eSocio socioMostrar,eLibro libroMostrar);
+
+void libroPorSocio(ePrestamo listaPrestamo[], int tamPrestamo,eSocio listaSocio[],int tamSocio,eLibro listaLibro[],int tamLibro);
+int buscarSocio(eSocio lista[], int tam, int codigo);
+
+int getOrder();
 
 
 

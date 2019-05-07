@@ -4,7 +4,10 @@
 #include <ctype.h>
 #include <conio.h>
 #include "Socios.h"
-
+#define ERROR -1
+#define EXITO 0
+#define DESCENDENTE 0
+#define ASCENDENTE 1
 
 void init_Autores(eAutores autores[], int tam)
 {
@@ -548,7 +551,7 @@ int inicializar_Prestamo(ePrestamo lista[], int tam)
 
 int buscarLibre_Prestamo(ePrestamo lista[], int tam)
 {
-     int indice = -1;
+    int indice = -1;
 
     for(int i=0; i < tam; i++)
     {
@@ -580,8 +583,8 @@ int mostrar_Libros(eLibro lista[], int tam)
     printf(" Codigo de libro       Codigo de Autor    Titulo\n\n");
     for(int i=0; i < tam; i++)
     {
-            mostrar_libro(lista[i]);
-            retorno=0;
+        mostrar_libro(lista[i]);
+        retorno=0;
     }
 
     return retorno;
@@ -603,8 +606,8 @@ int mostrar_Autores(eAutores lista[], int tam)
     printf(" Codigo de Autor       Nombre de Autor    Apellido de Autor\n\n");
     for(int i=0; i < tam; i++)
     {
-            mostrar_Autor(lista[i]);
-            retorno=0;
+        mostrar_Autor(lista[i]);
+        retorno=0;
     }
 
     return retorno;
@@ -619,7 +622,7 @@ void mostrar_Autor(eAutores autores)
 }
 
 //De aca para abajo verificar
-int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)
+int alta_Prestamos(ePrestamo listaPrestamos[],eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)
 {
 
     int indice;
@@ -639,24 +642,24 @@ int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaL
     else
     {
 
-    system("cls");
+        system("cls");
 
-    mostrar_Socios(listaSocio,tamSocio);
-    printf("\ningrese codigo socio: ");
-    scanf("%d",&auxIdSocio);
-
-
-
-    mostrar_Libros(listaLibro,tamLibro);
-    printf("ingrese codigo libro: ");
-    scanf("%d",&auxIdLibro);
-
-     printf("\nIngrese fecha de prestamo\n\n");
-     cargarFecha_Prestamo(listaPrestamos,tamPrestamo);
+        mostrar_Socios(listaSocio,tamSocio);
+        printf("\ningrese codigo socio: ");
+        scanf("%d",&auxIdSocio);
 
 
 
-    //separo
+        mostrar_Libros(listaLibro,tamLibro);
+        printf("ingrese codigo libro: ");
+        scanf("%d",&auxIdLibro);
+
+        printf("\nIngrese fecha de prestamo\n\n");
+        cargarFecha_Prestamo(listaPrestamos,indice);
+
+
+
+        //separo
 
         fflush(stdin);
         getValidInt("Esta seguro que quiere darle de alta a este Prestamo? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
@@ -753,4 +756,170 @@ int mostrar_Prestamos(ePrestamo lista[], int tam)
     }
 
     return retorno;
+}
+
+//informes
+
+void alquileresPorSocio(ePrestamo listaPrestamos[], int tamPrestamos,eSocio listaSocios[],int tamSocio, eLibro listaLibro[],int tamLibros)
+{
+    int auxCodCliente;
+    mostrar_Socios(listaSocios,tamSocio);
+
+    printf("\nIngresar Codigo socio: \n\n");
+    fflush(stdin);
+    scanf("%d",&auxCodCliente);
+    int flag = 0;
+
+    system("cls");
+    printf("id   cod de libro:   cod de cliente:   fecha:   \n\n");
+
+    for(int i=0; i < tamPrestamos; i++)
+    {
+        if(listaPrestamos[i].CodigoSocio==auxCodCliente && listaPrestamos[i].isEmpty==0)
+        {
+            mostrarPrestamos(listaPrestamos[i],listaSocios[i],listaLibro[i]);
+
+
+            flag = 1;
+        }
+    }
+
+    if(flag == 0)
+    {
+        printf("No hay alquileres cargados para ese cliente");
+    }
+    printf("\n\n");
+}
+
+
+void mostrarPrestamos(ePrestamo prestamoMostrar,eSocio socioMostrar,eLibro libroMostrar)
+{
+
+    printf("\ncodigo de Prestamo: %d  codigo de libro: %d \nTitulo: %s \ncodigo de cliente:%d , fecha de alquiler: %02d/%02d/%d\n  nombre: %s\n",prestamoMostrar.CodigoPrestamo,libroMostrar.CodigoLibro,libroMostrar.titulo,socioMostrar.codigoSocio,prestamoMostrar.fechaPrestamo.dia,prestamoMostrar.fechaPrestamo.mes,prestamoMostrar.fechaPrestamo.anio,socioMostrar.nombre);
+
+}
+
+
+
+
+void libroPorSocio(ePrestamo listaPrestamo[], int tamPrestamo,eSocio listaSocio[],int tamSocio,eLibro listaLibro[],int tamLibro)
+{
+    int auxCodigoLibro;
+    int auxCliente,index;
+
+    mostrar_Libros(listaLibro,tamLibro);
+    printf("\nIngresar el codigo de libro: \n\n");
+    fflush(stdin);
+    scanf("%d",&auxCodigoLibro);
+
+    int flag = 0;
+
+    system("cls");
+
+    printf("id   cod de libro:   cod de cliente:   fecha:   \n\n");
+
+    for(int i=0; i < tamPrestamo; i++)
+    {
+        if(listaPrestamo[i].CodigoLibro==auxCodigoLibro && listaPrestamo[i].isEmpty==0)
+        {
+            auxCliente=buscarSocio(listaSocio,tamSocio,listaPrestamo[i].CodigoSocio);
+
+            index=listaPrestamo[i].CodigoSocio-1;
+            mostrar_Socio(listaSocio[index]);
+            flag = 1;
+        }
+    }
+
+    if(flag == 0)
+    {
+        printf("No se alquilo ese juego\n");
+    }
+    printf("\n\n");
+}
+
+
+int buscarSocio(eSocio lista[], int tam, int codigo)//devuelvo el indice del socio.
+{
+    int indice = -1;
+
+    for(int i=0; i < tam; i++)
+    {
+
+        if( lista[i].codigoSocio == codigo && lista[i].isEmpty == 0)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+
+}
+
+
+
+
+
+int getOrder()
+{
+    int orden;
+    printf("Ingrese el orden en que quiere ordenar el apellido de los socios\n0. Descendente\n1. Ascendente\n");
+    scanf("%d", &orden);
+    return orden;
+}
+
+int sortSocios(eSocio* listaSocio, int tamSocio, int orde)
+{
+    int ret = ERROR;
+    eSocio aux;
+    if(tamSocio > 0 && listaSocio != NULL)
+    {
+        switch(orde)
+        {
+        case DESCENDENTE:
+            for(int i = 0; i < tamSocio - 1; i++)
+            {
+                for(int j = i + 1; j < tamSocio; j++)
+                {
+                    if(strcmp(listaSocio[j].apellido, listaSocio[i].apellido) > 0 && listaSocio[j].isEmpty == OCUPADO && listaSocio[i].isEmpty == OCUPADO)
+                    {
+                        aux = listaSocio[i];
+                        listaSocio[i] = listaSocio[j];
+                        listaSocio[j] = aux;
+                    }
+                    else if(strcmp(listaSocio[j].apellido, listaSocio[i].apellido) == 0  && listaSocio[j].isEmpty == OCUPADO && listaSocio[i].isEmpty == OCUPADO)
+                    {
+                        aux = listaSocio[i];
+                        listaSocio[i] = listaSocio[j];
+                        listaSocio[j] = aux;
+                    }
+                }
+            }
+            ret = EXITO;
+            break;
+        case ASCENDENTE:
+            for(int i = 0; i < tamSocio - 1; i++)
+            {
+                for(int j = i + 1; j < tamSocio; j++)
+                {
+                    if(strcmp(listaSocio[j].apellido, listaSocio[i].apellido) < 0  && listaSocio[j].isEmpty == OCUPADO && listaSocio[i].isEmpty == OCUPADO)
+                    {
+                        aux = listaSocio[i];
+                        listaSocio[i] = listaSocio[j];
+                        listaSocio[j] = aux;
+                    }
+                    else if(strcmp(listaSocio[j].apellido, listaSocio[i].apellido) == 0   && listaSocio[j].isEmpty == OCUPADO && listaSocio[i].isEmpty == OCUPADO)
+                    {
+                        aux = listaSocio[i];
+                        listaSocio[i] = listaSocio[j];
+                        listaSocio[j] = aux;
+                    }
+                }
+            }
+            ret = EXITO;
+            break;
+        default:
+            printf("Opcion de ordenamiento invalida ");
+        }
+    }
+    return ret;
 }
