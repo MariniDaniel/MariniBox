@@ -224,6 +224,14 @@ void libroPorSocio(ePrestamo listaPrestamo[], int tamPrestamo,eSocio listaSocio[
 int buscarSocio(eSocio lista[], int tam, int codigo);
 
 int getOrder();
+int sortLibros(eLibro* listaLibro, int tamLibro, int orden);
+int sortSocios(eSocio* listaSocio, int tamSocio, int orde);
+
+
+
+void totalGeneralPrestamo (eSocio socio[], int tamSocio);
+
+
 
 
 

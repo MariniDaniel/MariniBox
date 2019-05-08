@@ -862,7 +862,7 @@ int buscarSocio(eSocio lista[], int tam, int codigo)//devuelvo el indice del soc
 int getOrder()
 {
     int orden;
-    printf("Ingrese el orden en que quiere ordenar el apellido de los socios\n0. Descendente\n1. Ascendente\n");
+    printf("Ingrese el orden en que quiere ordenar \n0. Descendente\n1. Ascendente\n");
     scanf("%d", &orden);
     return orden;
 }
@@ -923,3 +923,100 @@ int sortSocios(eSocio* listaSocio, int tamSocio, int orde)
     }
     return ret;
 }
+
+
+
+int sortLibros(eLibro* listaLibro, int tamLibro, int orden)
+{
+    int ret = ERROR;
+    eLibro aux;
+    if(tamLibro > 0 && listaLibro != NULL)
+    {
+        switch(orden)
+        {
+        case DESCENDENTE:
+            for(int i = 0; i < tamLibro - 1; i++)
+            {
+                for(int j = i + 1; j < tamLibro; j++)
+                {
+                    if(strcmp(listaLibro[j].titulo, listaLibro[i].titulo) > 0 )
+                    {
+                        aux = listaLibro[i];
+                        listaLibro[i] = listaLibro[j];
+                        listaLibro[j] = aux;
+                    }
+                    else if(strcmp(listaLibro[j].titulo, listaLibro[i].titulo) == 0  )
+                    {
+                        aux = listaLibro[i];
+                        listaLibro[i] = listaLibro[j];
+                        listaLibro[j] = aux;
+                    }
+                }
+            }
+            ret = EXITO;
+            break;
+        case ASCENDENTE:
+            for(int i = 0; i < tamLibro - 1; i++)
+            {
+                for(int j = i + 1; j < tamLibro; j++)
+                {
+                    if(strcmp(listaLibro[j].titulo, listaLibro[i].titulo) < 0  )
+                    {
+                        aux = listaLibro[i];
+                        listaLibro[i] = listaLibro[j];
+                        listaLibro[j] = aux;
+                    }
+                    else if(strcmp(listaLibro[j].titulo, listaLibro[i].titulo) == 0   )
+                    {
+                        aux = listaLibro[i];
+                        listaLibro[i] = listaLibro[j];
+                        listaLibro[j] = aux;
+                    }
+                }
+            }
+            ret = EXITO;
+            break;
+        default:
+            printf("Opcion de ordenamiento invalida ");
+        }
+    }
+    return ret;
+}
+
+//Hasta aca TODO OK!!!
+
+
+
+
+void totalGeneralPrestamo (eSocio socio[], int tamSocio)
+{
+    float prom = 0;
+    float total = 7;
+    int cantidadPrestamo = 0;
+    int salarioMenorPromedio = 0;
+
+    for(int i = 0; i < tamSocio; i++)
+    {
+        if(socio[i].isEmpty == 0)
+        {
+            cantidadPrestamo++;
+        }
+    }
+    prom = total/cantidadPrestamo;
+
+    for(int i = 0; i < tamSocio; i++)
+    {
+        if(socio[i].isEmpty == 0)
+        {
+            if(socio[i].codigoSocio > prom)
+            {
+                salarioMenorPromedio++;
+            }
+        }
+    }
+
+    printf("Total de Prestamos: %.2f\n\n", cantidadPrestamo);
+    printf("Promedio Prestamos: %.2f\n\n", prom);
+    printf("Cantidad de socios que no superan el promedio: %d\n\n", salarioMenorPromedio);
+}
+

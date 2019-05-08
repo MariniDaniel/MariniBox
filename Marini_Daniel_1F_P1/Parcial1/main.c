@@ -55,7 +55,9 @@ int main()
 
         printf("9- Libros solicitados por un socio D \n\n");
         printf("10 -Socios que solicitaron prestamo de un libro C \n\n");
-        printf("11 - Listar socios ordenamos por apellido- vacio J \n\n");
+        printf("11 - Listar socios ordenados por Apellido   J \n\n");
+        printf("12 - Listar libros ordenados por Titulo   I \n\n");
+        printf("13 - Total general y promedio diario A \n\n");
 
 
         printf("14- Salir  \n\n");
@@ -177,7 +179,7 @@ int main()
             if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
             {
                 system("cls");
-                   libroPorSocio(listaPrestamos,TAM_PRESTAMOS,listaSocios,TAM_SOCIOS,listaLibros,TAM_LIBROS); //PUNTO C
+                libroPorSocio(listaPrestamos,TAM_PRESTAMOS,listaSocios,TAM_SOCIOS,listaLibros,TAM_LIBROS); //PUNTO C
 
             }
             else
@@ -186,7 +188,7 @@ int main()
             }
 
             break;
-                break;
+
         case 11:
             if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
             {
@@ -195,7 +197,7 @@ int main()
                 es= sortSocios(listaSocios,TAM_SOCIOS,orden);
                 if(es == ERROR)
                 {
-                    printf("Error al ordenar la lista de empleados.\n\n");
+                    printf("Error al ordenar la lista de socios.\n\n");
                 }
 
                 es = mostrar_Socios(listaSocios,TAM_SOCIOS);
@@ -203,6 +205,43 @@ int main()
                 {
                     printf("Error al imprimir los Socios.\n\n");
                 }   //J
+            }
+            else
+            {
+                printf("\nPrimero realize un prestamo\n\n");
+            }
+
+
+            break;
+        case 12:
+            if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
+            {
+                system("cls");
+                orden = getOrder();
+                es= sortLibros(listaLibros,TAM_LIBROS,orden);
+                if(es == ERROR)
+                {
+                    printf("Error al ordenar la lista de socios.\n\n");
+                }
+
+                es = mostrar_Libros(listaLibros,TAM_LIBROS);
+                if(es == ERROR)
+                {
+                    printf("Error al imprimir los libros.\n\n");
+                }   //I
+            }
+            else
+            {
+                printf("\nPrimero realize un prestamo\n\n");
+            }
+
+
+            break;
+             case 13:
+            if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
+            {
+                system("cls");
+                totalGeneralPrestamo(listaSocios,TAM_SOCIOS);
             }
             else
             {

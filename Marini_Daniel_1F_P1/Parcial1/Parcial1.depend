@@ -111,7 +111,7 @@
 	<ctype.h>
 	"UTN_INPUT.h"
 
-1557273000 source:c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\main.c
+1557275094 source:c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -119,12 +119,12 @@
 	<conio.h>
 	"Socios.h"
 
-1557273000 c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\socios.h
+1557275088 c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\socios.h
 	"UTN_INPUT.h"
 
 1557189358 c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\utn_input.h
 
-1557273065 source:c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\socios.c
+1557275583 source:c:\users\alumno\desktop\marini_daniel_1f_p1\parcial1\socios.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
