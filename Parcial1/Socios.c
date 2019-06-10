@@ -6,58 +6,58 @@
 #include "Socios.h"
 
 
-void init_Autores(eAutores autores[], int tam)
+
+
+
+void init_Socios(eSocio socios[], int tam)
 {
-    int CodigoAutor[10] = {1001,1002,1003,1004,1005,1006,1007,1008,1009,1010};
-    char nombre[10][31]= {"Daniel","Tomas","Joaquin","Raul","Sebastian","Thiago","Alexis","Stephen","Manuel","Eliza"};
-    char apellido[10][31]= {"Ortiz","Salguez","Casco","Milton","Bulga","Zorzano","Juarez","King","Mas","Carriot"};
+    int codigoSocio[10] = {1, 2, 3, 4, 5,6, 7, 8, 9, 10};
+    char nombre[10][31]= {"Pepe","Daniel","Jon","Bill ","Charlie","Laura","Miriam","Sansa","Bran ","Lydia"};
+    char apellido[10][31]= {"Toro","Marini","Snow","licker","Day","Jurez","Silva","Stark","Stark","Diaz"};
+    char sexo[10]= {'M','M','M','M','M','F','F','F','M','F'};
+    char telefono[10][31]= {"234-123","524-234","987-542","654-312 ","456-567","524-873","246-631","246-123","554-978 ","432-135"};;
+    char eMail[10][31]= {"PeLado@out.com","Danielito@out.com","Prox0@yah.com","HITCH@off.com","TORITA@yah.com","Silva21@out.com","Miriamq2@off.com","Stark@yah.com","Stark2@off.com","Diaz1@out.com"};;
+    eFecha fechaDeAsociado[10]= {{9,5,2001},{1,9,1975},{2,10,2008},{24,12,2019},{15,1,2012},{12,2,1993},{28,3,1984},{7,4,1981},{5,5,1998},{13,7,2002} };
 
 
-    for(int i=0; i<tam; i++)
+    for(int i=0; i<10; i++)
     {
-        autores[i].CodigoAutor=CodigoAutor[i];
+        socios[i].codigoSocio=codigoSocio[i];
 
-        strcpy(autores[i].nombre, nombre[i]);
+        strcpy(socios[i].nombre, nombre[i]);
 
-        strcpy(autores[i].apellido, apellido[i]);
+        strcpy(socios[i].apellido, apellido[i]);
 
+        socios[i].sexo=sexo[i];
 
+        strcpy(socios[i].telefono, telefono[i]);
+
+        strcpy(socios[i].eMail, eMail[i]);
+
+        socios[i].fechaDeAsociado=fechaDeAsociado[i];
+
+        generarNextId();
+
+        socios[i].isEmpty=OCUPADO;
     }
+
 }
 
-
-void init_Libros(eLibro libros[], int tam)
-{
-    int CodigoLibro[10] = {101, 102, 103, 104, 105, 106, 107, 108, 109, 110};//Diferentes codigos para no mezclar
-    int codigoAutor[10] = { 1010, 1005, 1008, 1007, 1002, 1004, 1009, 1003, 1006, 1001};
-    char titulo[10][31]= {"Larga Marcha","Starwars","Minotauro","Martin Fierro","HarryPotter","Tango","Infantil","Independiente","Terror","100Chistes"};
-
-    for(int i=0; i<tam; i++)
-    {
-        libros[i].CodigoLibro=CodigoLibro[i];
-
-        strcpy(libros[i].titulo, titulo[i]);
-
-        libros[i].codigoAutor=codigoAutor[i];
-
-
-
-    }
-}
 
 int inicializar_Socios(eSocio lista[], int tam)
 {
-    int retorno=-1;
+    int myReturn=-1;
 
     for(int i=0; i < tam; i++)
     {
         lista[i].isEmpty = VACIO;
 
-        retorno=0;
+        myReturn=0;
     }
 
-    return retorno;
+    return myReturn;
 }
+
 
 int buscarLibre(eSocio lista[], int tam)
 {
@@ -120,6 +120,7 @@ int generarNextId()
     return id;
 }
 
+
 int alta_Socios(eSocio lista[], int tam)
 {
     int indice;
@@ -129,7 +130,7 @@ int alta_Socios(eSocio lista[], int tam)
     char auxSexo;
     char auxTelefono[31];
     char auxEmail[31];
-    int retorno=-1;
+    int myReturn=-1;
 
 
     indice = buscarLibre(lista, tam);
@@ -145,57 +146,64 @@ int alta_Socios(eSocio lista[], int tam)
 
 
         fflush(stdin);
-        getValidString("\nIngrese nombre: ","\nError, por favor solo ingrese letras","\nError ,se exedio del limite de letras\n",auxNombre,1,30);
+        getValidString("\nIngrese nombre: ","\nError por favor solo ingrese caracteres","\nError se exedio del limite de caracteres\n",auxNombre,1,30);
         stringToUpper(auxNombre);
 
         strcpy(lista[indice].nombre,auxNombre);
-
+        system("cls");
 
         fflush(stdin);
-        getValidString("Ingrese apellido: ","\nError, por favor solo ingrese letras","\nError ,se exedio del limite de letras\n",auxApellido,1,30);
+        getValidString("Ingrese apellido: ","\nError por favor solo ingrese caracteres","\nError se exedio del limite de caracteres\n",auxApellido,1,30);
         stringToUpper(auxApellido);
 
         strcpy(lista[indice].apellido,auxApellido);
-
+        system("cls");
 
         fflush(stdin);
-        getSexChar("Ingrese sexo: ","Error, ingrese  <F-M>\n",&auxSexo);
+        getSexChar("ingrese sexo","Error ingrese sexo: valido <F-M>\n",&auxSexo);
 
         lista[indice].sexo=auxSexo;
 
+        system("cls");
+
+
         fflush(stdin);
-        getString("Ingrese telefono (debe tener un guion): ",auxTelefono);
+        getString("ingrese telefono (debe tener un guion y 6 numeros): ",auxTelefono);
+
+        while(! (esTelefono(auxTelefono,7,7) ) )
+        {
+
+            fflush(stdin);
+            getString("Reingrese telefono: (debe tener un guion y 6 numeros)",auxTelefono);
+
+        }
+
+
         strcpy(lista[indice].telefono,auxTelefono);
-        while(!Telefono(auxTelefono))
-        {
-            system("cls");
-            printf("\nEl telefono debe contener 1 guion: ");
-            getString("\nIngrese telefono (debe tener un guion): ",auxTelefono);
-        }
 
-
-
-        printf("\nIngrese su fecha de ingreso\n\n");
-        cargarFecha_Socios(lista,indice);
-
-
-
+        system("cls");
 
         fflush(stdin);
-        getString("ingrese email(datos alfanumericos): ",auxEmail);
-        while(!strchr(auxEmail, '@') != NULL)
-        {
-            system("cls");
-            printf("!\nNo es una direccion de correo o no uso arroba.\n");
-            getString("\nReingrese email(datos alfanumericos): ",auxEmail);
-        }
+        getString("ingrese email(debe tener un almenos un @ y no empezar con un numero ): ",auxEmail);
 
+        while(! (esEmail(auxEmail) ) )
+        {
+
+            fflush(stdin);
+            getString("Reingrese email: (debe tener un almenos un @ y no empezar con un numero )",auxEmail);
+
+        }
 
 
         strcpy(lista[indice].eMail,auxEmail);
 
+        printf("\nIngrese su fecha de ingreso\n\n");
+        cargarFecha_Socios(lista,indice);
+
         fflush(stdin);
-        getValidInt("Esta seguro que quiere darle de alta a este empleado? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
+        getValidInt("Esta seguro que quiere darle de alta a este socio? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
+
+
 
 
         if(respuesta==1)
@@ -205,16 +213,20 @@ int alta_Socios(eSocio lista[], int tam)
 
             lista[indice].codigoSocio=generarNextId();
 
-            printf("Alta empleado exitosa!!!\n\n");
-            retorno=0;
+            printf("Alta socio exitosa!!!\n\n");
+
+            myReturn=0;
+
         }
         else
         {
-            printf("Alta cancelada");
+
+            printf("alta cancelada");
+
         }
     }
 
-    return retorno;
+    return myReturn;
 }
 
 void cargarFecha_Socios(eSocio lista[],int indice)
@@ -234,7 +246,7 @@ void cargarFecha_Socios(eSocio lista[],int indice)
     lista[indice].fechaDeAsociado.mes=auxMes;
 
 
-    getValidInt("Ingrese anio: ","Por favor ingrese un anio valido entre 1980 y 2019: \n",1980,2019,&auxAnio);
+    getValidInt("Ingrese anio: ","Por favor ingrese un anio valido entre 1960 y 2030: \n",1980,2019,&auxAnio);
 
     lista[indice].fechaDeAsociado.anio=auxAnio;
 }
@@ -242,8 +254,7 @@ void cargarFecha_Socios(eSocio lista[],int indice)
 void mostrar_Socio(eSocio socio)
 {
 
-
-    printf("%2d   %10s   %7s   %5c   %10s  %10s %d/%d/%d\n", socio.codigoSocio, socio.nombre,socio.apellido, socio.sexo,socio.telefono,socio.eMail,socio.fechaDeAsociado.dia,socio.fechaDeAsociado.mes,socio.fechaDeAsociado.anio);
+    printf("%2d   %9s   %7s   %5c   %10s  %10s %7d/%d/%d\n", socio.codigoSocio, socio.nombre,socio.apellido, socio.sexo,socio.telefono,socio.eMail,socio.fechaDeAsociado.dia,socio.fechaDeAsociado.mes,socio.fechaDeAsociado.anio);
 
 }
 
@@ -253,7 +264,7 @@ int mostrar_Socios(eSocio lista[], int tam)
 
     int retorno=-1;
 
-    printf(" Codigo   Nombre    Apellido    Sexo    Telefono   Email  Fecha De Asociado\n\n");
+    printf(" Codigo   Nombre    Apellido   Sexo     Telefono   Email      Fecha De Asociado\n\n");
     for(int i=0; i < tam; i++)
     {
         if(lista[i].isEmpty == OCUPADO)
@@ -266,11 +277,12 @@ int mostrar_Socios(eSocio lista[], int tam)
 
     if( retorno == -1)
     {
-        printf("\nNo hay empleados que mostrar\n");
+        printf("\nNo hay socios que mostrar\n");
     }
 
     return retorno;
 }
+
 
 int  modificar_Socios(eSocio lista[], int tam)
 {
@@ -280,14 +292,6 @@ int  modificar_Socios(eSocio lista[], int tam)
     int indice;
     int existeSocio=0;
     int retorno=-1;
-
-    for(i=0; i<tam; i++)
-    {
-        if(lista[i].isEmpty==OCUPADO)
-        {
-            printf("\nCantidad de empleados %d",lista[i].codigoSocio);
-        }
-    }
 
     mostrar_Socios(lista,tam);
     printf("\nQue socio queres modificar? (Ingresar Codigo socio) ");
@@ -302,7 +306,7 @@ int  modificar_Socios(eSocio lista[], int tam)
         existeSocio=1;
 
         fflush(stdin);
-        getValidInt("Esta seguro que quiere modificar a este socio? 1(Si) o 2(No)","ERROR, ingrese una opcion valida <1-2>",1,2,&respuesta);
+        getValidInt("Esta seguro que quiere modificar a este socio? <1.Si-2.No>","ERROR, ingrese una opcion valida <1-2>",1,2,&respuesta);
 
         switch(respuesta)
         {
@@ -323,7 +327,7 @@ int  modificar_Socios(eSocio lista[], int tam)
 
     if(existeSocio==0)
     {
-        printf("ERROR, el empleado no existe\n");
+        printf("ERROR, el socio no existe\n");
     }
 
 
@@ -382,14 +386,16 @@ void modf_Socios(eSocio lista[], int indice)
         case 3:
 
             fflush(stdin);
-            getString("Ingrese el nuevo telefono (debe tener un guion): ",auxNewTelefono);
-            strcpy(lista[indice].telefono,auxNewTelefono);
-            while(!Telefono(auxNewTelefono))
+            getString("ingrese telefono (debe tener un guion y 6 numeros): ",auxNewTelefono);
+
+            while(! (esTelefono(auxNewTelefono,7,7) ) )
             {
-                system("cls");
-                printf("\nEl telefono debe contener 1 guion: ");
-                getString("\nIngrese telefono (debe tener un guion): ",auxNewTelefono);
+                fflush(stdin);
+                getString("Reingrese telefono: (debe tener un guion y 6 numeros)",auxNewTelefono);
+
             }
+
+            strcpy(lista[indice].telefono,auxNewTelefono);
 
             printf("\nDato modificado\n");
             break;
@@ -403,17 +409,17 @@ void modf_Socios(eSocio lista[], int indice)
             break;
         case 5:
 
-
             fflush(stdin);
-            getString("ingrese nuevo email(datos alfanumericos): ",auxNewEmail);
-            while(!strchr(auxNewEmail, '@') != NULL)
+            getString("ingrese email(debe tener un almenos un @ y no empezar con un numero ): ",auxNewEmail);
+
+            while(! (esEmail(auxNewEmail) ) )
             {
-                system("cls");
-                printf("!\nNo es una direccion de correo o no uso arroba.\n");
-                getString("\nReingrese email(datos alfanumericos): ",auxNewEmail);
+                fflush(stdin);
+                getString("Reingrese email: (debe tener un almenos un @ y no empezar con un numero )",auxNewEmail);
 
             }
-            strcpy(lista[indice].eMail,auxNewEmail);
+            strcpy(lista[indice].eMail, auxNewEmail);
+
             printf("\nDato modificado\n");
             break;
         case 6:
@@ -450,15 +456,8 @@ int baja_Socios(eSocio lista[], int tam)
     int retorno=-1;
     int existeSocio=0;
 
-    for(i=0; i<tam; i++)
-    {
-        if(lista[i].isEmpty==OCUPADO)
-        {
-            printf("\nCantidad de empleados %d\n",lista[i].codigoSocio);
-        }
-    }
-
     mostrar_Socios(lista,tam);
+
     printf("\nQue socio queres dar de baja? (Ingresar ID socio) ");
     fflush(stdin);
     scanf("%d",&auxLegajo);
@@ -497,6 +496,20 @@ int baja_Socios(eSocio lista[], int tam)
     return retorno;
 }
 
+void cargarDescripcion_Socio(eSocio listaSocios[], int tamSocios, int idSocios, char apellido[],char nombre[])
+{
+    for(int i=0; i < tamSocios; i++)
+    {
+        if( listaSocios[i].codigoSocio == idSocios)
+        {
+            strcpy(nombre, listaSocios[i].nombre);
+            strcpy(apellido, listaSocios[i].apellido);
+            break;
+        }
+    }
+}
+
+
 int ordenar_Socios(eSocio lista[],int tam )
 {
     eSocio auxSocio;
@@ -526,192 +539,4 @@ int ordenar_Socios(eSocio lista[],int tam )
 
     mostrar_Socios(lista,tam);
     return retorno;
-}
-
-
-
-int inicializar_Prestamo(ePrestamo lista[], int tam)
-{
-    int retorno=-1;
-
-    for(int i=0; i < tam; i++)
-    {
-        lista[i].isEmpty = VACIO;
-
-        retorno=0;
-    }
-
-    return retorno;
-}
-
-
-int buscarLibre_Prestamo(ePrestamo lista[], int tam)
-{
-     int indice = -1;
-
-    for(int i=0; i < tam; i++)
-    {
-        if(lista[i].isEmpty == VACIO)
-        {
-            indice = i;
-            break;
-        }
-    }
-    return indice;
-}
-
-
-int generarNextId_Prestamo()
-{
-    static int id=200;
-
-    id ++;
-
-    return id;
-}
-
-
-int mostrar_Libros(eLibro lista[], int tam)
-{
-
-    int retorno=-1;
-
-    printf(" Codigo de libro       Codigo de Autor    Titulo\n\n");
-    for(int i=0; i < tam; i++)
-    {
-            mostrar_libro(lista[i]);
-            retorno=0;
-    }
-
-    return retorno;
-}
-
-void mostrar_libro(eLibro libros)
-{
-
-
-    printf("%5d   %20d   %20s   \n", libros.CodigoLibro,libros.codigoAutor,libros.titulo);
-
-}
-
-int mostrar_Autores(eAutores lista[], int tam)
-{
-
-    int retorno=-1;
-
-    printf(" Codigo de Autor       Nombre de Autor    Apellido de Autor\n\n");
-    for(int i=0; i < tam; i++)
-    {
-            mostrar_Autor(lista[i]);
-            retorno=0;
-    }
-
-    return retorno;
-}
-
-void mostrar_Autor(eAutores autores)
-{
-
-
-    printf("%5d   %20s   %20s   \n", autores.CodigoAutor,autores.nombre,autores.apellido);
-
-}
-
-//De aca para abajo verificar
-int alta_Prestamos(ePrestamo listaPrestamos[] ,eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo)
-{
-
-    int indice;
-    int respuesta;
-    int auxIdSocio;
-    int auxIdLibro;
-    int retorno=-1;
-
-
-    indice = buscarLibre_Prestamo(listaPrestamos, tamPrestamo);
-
-    if( indice == -1)
-    {
-
-        printf("\nNo hay lugar en el sistema\n");
-    }
-    else
-    {
-
-    system("cls");
-
-    mostrar_Socios(listaSocio,tamSocio);
-    printf("\ningrese codigo socio: ");
-    scanf("%d",&auxIdSocio);
-
-
-    for(int i=0; i < tamSocio; i++)
-    {
-     //  if(auxIdSocio[i]==listaSocio[i].codigoSocio )
-        {
-            listaPrestamos[i].CodigoPrestamo;
-        }
-    }
-
-    mostrar_Libros(listaLibro,tamLibro);
-    printf("ingrese codigo libro: ");
-    scanf("%d",&auxIdLibro);
-
-     printf("\nIngrese su fecha de ingreso\n\n");
-     cargarFecha_Prestamo(listaPrestamos,tamPrestamo);
-
-
-    //separo
-
-        fflush(stdin);
-        getValidInt("Esta seguro que quiere darle de alta a este Prestamo? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
-
-        if(respuesta==1)
-        {
-
-            listaPrestamos[indice].isEmpty = OCUPADO;
-
-            listaPrestamos[indice].CodigoPrestamo=generarNextId_Prestamo();
-
-            printf("Alta Prestamo exitosa!!!\n\n");
-
-            retorno=0;
-
-        }
-        else
-        {
-
-            printf("alta cancelada");
-
-        }
-    }
-
-    return retorno;
-
-
-
-
-
-}
-
-void cargarFecha_Prestamo(ePrestamo lista[],int indice)
-{
-    int auxDia;
-    int auxMes;
-    int auxAnio;
-
-
-    getValidInt("Ingrese dia: ","\nPor favor ingrese un dia valido entre 1 y 30: \n",1,30,&auxDia);
-
-    lista[indice].fechaPrestamo.dia=auxDia;
-
-
-    getValidInt("Ingrese mes:","Por favor ingrese un mes valido entre 1 y 12: \n",1,12,&auxMes);
-
-    lista[indice].fechaPrestamo.mes=auxMes;
-
-
-    getValidInt("Ingrese anio: ","Por favor ingrese un anio valido entre 2000 y 2030: \n",2000,2030,&auxAnio);
-
-    lista[indice].fechaPrestamo.anio=auxAnio;
 }

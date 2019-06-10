@@ -48,13 +48,21 @@ void stringToUpper(char cadena[]);
  *
  */
 int esNumerico(char str[]) ;
+
+/**
+ * \brief Verifica si el valor recibido contiene solo números, "@" y -
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si contiene datos alfanumericos que no empiezen en numeros, espacios y un "@".
+ *
+ */
+int esEmail(char str[]);
 /**
  * \brief Verifica si el valor recibido contiene solo números, + y -
  * \param str Array con la cadena a ser analizada
  * \return 1 si contiene solo numeros, espacios y un guion.
  *
  */
-int esTelefono(char str[]);
+int esTelefono(char str[], int lowLimit,int highLimit);
 /**
  * \brief Verifica si el valor recibido contiene solo letras y números
  * \param str Array con la cadena a ser analizada
@@ -137,8 +145,6 @@ int getValidString(char requestMessage[],char errorMessage[], char errorMessageL
  */
 int getValidFloat(char requestMessage[],char errorMessage[], float lowLimit, float hiLimit,float* input);
 
-int Telefono(char cadena[]);
 
-int AlfaNumerico(char cadena[]);
 
 #endif // UTN_INPUT_H_INCLUDED

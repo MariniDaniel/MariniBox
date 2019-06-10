@@ -3,6 +3,9 @@
 #define OCUPADO 0
 #define VACIO 1
 #include "UTN_INPUT.h"
+
+
+
 typedef struct
 {
     int dia;
@@ -25,76 +28,23 @@ typedef struct
 
 }eSocio;
 
-typedef struct
-{
-    int CodigoLibro;
-    char titulo [51];
-    int codigoAutor;
-
-}eLibro;
-
-typedef struct
-{
-    int CodigoAutor;
-    char apellido [31];
-    char nombre [31];
-
-}eAutores;
 
 
-typedef struct
-{
-    int CodigoSocio;
-    int CodigoLibro;
-    int CodigoPrestamo;
-    eFecha fechaPrestamo;
-    int isEmpty;
-
-}ePrestamo;
-
-
-/** \brief Funcion encargada de genera un numero de ID y autoincrementarlo
+/** \brief hardcodeo socios
  *
- * \param La funcion no recibe parametros
- * \param La funcion no recibe parametros
- * \return Retorna el ID generado autoincrementado
+ * \param socios[] eSocio
+ * \param tam int
+ * \return void
  *
  */
-int generarNextId_Prestamo();
-
-int inicializar_Prestamo(ePrestamo lista[], int tam);
-
-int buscarLibre_Prestamo(ePrestamo lista[], int tam);
-
-//int alta_Prestamos(ePrestamo listaPrestamos[],eSocio listaSocio[],eLibro listaLibro[],int tamSocio,int tamLibro,int tamPrestamo);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/** \brief funcion encargada de hardcodear los menues en la estructura
+void init_Socios(eSocio socios[], int tam);
+/** \brief Funcion encargada de inicializar todos los elementos del array de socios en un estado libre para cargar datos
  *
- * \param menues[] eMenu recibe el array de menues
- * \param tam int recibe el tamaño del array de menues
- * \return void La funcion no retorna nada
- *
- */
-void init_Autores(eAutores autores[], int tam);
-
-/** \brief funcion encargada de hardcodear los menues en la estructura
- *
- * \param menues[] eMenu recibe el array de menues
- * \param tam int recibe el tamaño del array de menues
- * \return void La funcion no retorna nada
- *
- */
- //////////////////////////////////////////////////////
-void init_Libros(eLibro libros[], int tam);
-
-/** \brief Funcion encargada de inicializar todos los elementos del array de empleados en un estado libre para cargar datos
- *
- * \param Employee* Recibe un puntero al array de empleados
+ * \param Employee* Recibe un puntero al array de socios
  * \param int recibe la cantidad de elementos en el array
  * \return int retorna -1 si hubo algun error y 0 si no hubo ningun error
  *
  */
- ////////////////////////////////////////////////////////////////////////////////////////
 int inicializar_Socios(eSocio lista[], int tam);
 
 
@@ -107,7 +57,7 @@ int inicializar_Socios(eSocio lista[], int tam);
  */
 int buscarLibre(eSocio lista[], int tam);
 
-/** \brief Funcion encargada de validar si existe un empleado cargado en el array
+/** \brief Funcion encargada de validar si existe un socio cargado en el array
  *
  * \param list Employee* Recibe un puntero al array de Socios
  * \param len int la cantidad de elementos en el array
@@ -132,25 +82,26 @@ int generarNextId();
  * \param tam int recibe la cantidad de elementos en el array  de Socios
  * \param sectores[] eSector Recibe el array de sectores
  * \param tamSector int recibe la cantidad de elementos en el array de sectores
- * \return int  Retorna -1 si hubo un error y 0 si el empleado fue cargado correctamente
+ * \return int  Retorna -1 si hubo un error y 0 si el socio fue cargado correctamente
  *
  */
 int alta_Socios(eSocio lista[], int tam);
 
+
 /** \brief funcion encargada de cargar la fecha en la estructura
  *
- * \param lista[] eEmpleado recibe el array de Socios
- * \param indice int recibe la posicion del empleado a cargar su fecha
+ * \param lista[] esocio recibe el array de Socios
+ * \param indice int recibe la posicion del socio a cargar su fecha
  * \return void
  *
  */
 void cargarFecha_Socios(eSocio lista[],int indice);
 
-/** \brief Funcion encargada de mostrar a un empleado
+/** \brief Funcion encargada de mostrar a un socio
  *
  * \param sectores[] eSector recibe el array de sectores
  * \param tamSector int recibe el tamaño de sectoress
- * \param lista eEmpleado recibe el array de Socios
+ * \param lista esocio recibe el array de Socios
  * \return void La funcion no retorna nada
  *
  */
@@ -158,7 +109,7 @@ void mostrar_Socio(eSocio socio);
 
 /** \brief Funcion encargada de mostrar el listado de todos los Socios
  *
- * \param lista[] eEmpleado recibe el array de Socios
+ * \param lista[] esocio recibe el array de Socios
  * \param tam int recibe el tamaño del array de Socios
  * \param sectores[] eSector recibe el array de sectores
  * \param tamSector int recibe el tamaño de sectoress
@@ -167,9 +118,9 @@ void mostrar_Socio(eSocio socio);
  */
  int mostrar_Socios(eSocio lista[], int tam);
 
- /** \brief Funcion que busca al empleado por su numero de ID
+ /** \brief Funcion que busca al socio por su numero de ID
  *
- * \param Employee* Recibe un puntero al array de empleados
+ * \param Employee* Recibe un puntero al array de socios
  * \param int recibe la cantidad de elementos en el array
  * \param int recibe el ID generado
  * \return int retorna la posicion del array donde se encuentra el ID generado
@@ -177,43 +128,52 @@ void mostrar_Socio(eSocio socio);
  */
  int buscar_Socios_PorId(eSocio lista[], int tam, int codigoSocio);
 
- /** \brief Funcion encargada de modificar los campos de un empleado
+ /** \brief Funcion encargada de modificar los campos de un socio
  *
- * \param Employee* Recibe un puntero al array de empleados
+ * \param Employee* Recibe un puntero al array de socios
  * \param int Recibe la cantidad de elementos en el array
  * \return int la posicion del array donde se encuentra el ID seleccionado
  *
  */
 void modf_Socios(eSocio lista[], int indice);
 
-/** \brief Funcion encargada de buscar al empleado y modificarlo
+/** \brief Funcion encargada de buscar al socio y modificarlo
  *
- * \param Employee* Recibe un puntero al array de empleados
+ * \param Employee* Recibe un puntero al array de socios
  * \param int recibe la cantidad de elementos en el array
- * \return int Retorna -1 si hubo un error y 0 si se pudo modificar correctamente al empleado
+ * \return int Retorna -1 si hubo un error y 0 si se pudo modificar correctamente al socio
  *
  */
 int modificar_Socios(eSocio lista[],int tam);
 
-/** \brief Funcion encargada de dar de baja a un empleado
+/** \brief Funcion encargada de dar de baja a un socio
  *
- * \param Employee* Recibe un puntero al array de empleados
+ * \param Employee* Recibe un puntero al array de socios
  * \param int Recibe la cantidad de elementos en el array
  * \return int Retorna -1 si hubo un error o 0 si se dio de baja exitosamente
  *
  */
 int baja_Socios(eSocio lista[], int tam);
 
+/** \brief funcion encarfada de ordenar a los socios de por apellido y sector y mostralos
+ *
+ * \param lista[] eSocio array de socios
+ * \param tam int tamaño del array de socios
+ * \return int Retorna -1 si hubo un error o 0 si no
+ *
+ */
 int ordenar_Socios(eSocio lista[],int tam );
-//libros
-int mostrar_Libros(eLibro lista[], int tam);
-void mostrar_libro(eLibro libros);
-//autores
-int mostrar_Autores(eAutores lista[], int tam);
-void mostrar_Autor(eAutores autores);
-//prestamos
-void cargarFecha_Prestamo(ePrestamo lista[],int indice);
 
-
+/** \brief
+ *
+ * \param listaSocios[] eSocio
+ * \param tamSocios int
+ * \param idSocios int
+ * \param apellido[] char
+ * \param nombre char
+ * \return void
+ *
+ */
+void cargarDescripcion_Socio(eSocio listaSocios[], int tamSocios, int idSocios, char apellido[],char nombre[]);
 
 #endif // SOCIOS_H_INCLUDED

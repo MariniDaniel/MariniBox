@@ -70,8 +70,30 @@ int esAlfaNumerico(char str[])
    return 1;
 }
 
+int esEmail(char str[])
+{
+   int i=0;
+   int contadorArroba=0;
+   while(str[i] != '\0')
+   {
+       if((str[i] != ' ') && (str[i] != '@')&&(str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+           return 0;
+       if(str[i] == '@' && (str[0] < '0' || str[0] > '9'))
+            contadorArroba++;
+       i++;
+   }
+   if(contadorArroba==1)// debe tener un arroba
 
-int esTelefono(char str[])
+   {
+        return 1;
+
+   }
+
+
+    return 0;
+}
+
+int esTelefono(char str[], int lowLimit,int highLimit)
 {
    int i=0;
    int contadorGuiones=0;
@@ -86,6 +108,18 @@ int esTelefono(char str[])
    if(contadorGuiones==1)// debe tener un guion
 
    {
+
+
+       if(strlen(str) > highLimit || strlen(str) < lowLimit)
+        {
+
+           return 0;
+
+        }
+
+
+
+
         return 1;
 
    }
@@ -94,7 +128,6 @@ int esTelefono(char str[])
     return 0;
 }
 
-//No se si borrarla
 
 /*void getString(char mensaje[],char input[])
 {
@@ -187,7 +220,7 @@ int getValidInt(char requestMessage[],char errorMessage[], int lowLimit, int hiL
 {
     char auxStr[256];
     int auxInt;
-    int retorno=-1;
+    int myReturn=-1;
     while(1)
     {
         if (!getStringNumeros(requestMessage,auxStr))
@@ -203,13 +236,13 @@ int getValidInt(char requestMessage[],char errorMessage[], int lowLimit, int hiL
             continue;
 
         }
-        retorno=0;
+        myReturn=0;
         *input=auxInt;
         break;
 
     }
 
-    return retorno;
+    return myReturn;
 }
 
 int esNumericoFlotante(char str[])
@@ -254,7 +287,7 @@ int getValidFloat(char requestMessage[],char errorMessage[], float lowLimit, flo
 {
     char auxStr[256];
     float auxFloat;
-    int retorno=-1;
+    int myReturn=-1;
     while(1)
     {
         if (!getStringNumerosFlotantes(requestMessage,auxStr))
@@ -270,13 +303,13 @@ int getValidFloat(char requestMessage[],char errorMessage[], float lowLimit, flo
             continue;
 
         }
-        retorno=0;
+        myReturn=0;
         *input=auxFloat;
         break;
 
     }
 
-    return retorno;
+    return myReturn;
 }
 
 
@@ -319,34 +352,4 @@ int AlfaNumerico(char cadena[])
     return sePudo;
 }
 
-int Telefono(char cadena[])
-{
-    int sePudo=0;
-    int i=0;
-    int cantidadGuiones=0;
-    while(cadena[i]!= '\0')
-    {
-        if((cadena[i]!=' ')&&(cadena[i]!='-')&&(cadena[i]<'0' || cadena[i]>'9'))
-        {
-            sePudo=0;
-        }
-        if(cadena[i]=='-')
-        {
-            cantidadGuiones++;
-        }
-        i++;
-    }
-    if(cantidadGuiones==1)
-    {
-        sePudo=1;
-    }
-    return sePudo;
-}
 
-
-
-
-
-
-
-//Sello anticopia DanielMarini

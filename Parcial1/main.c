@@ -3,21 +3,14 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#define TAM_SOCIOS 5
+#define TAM_SOCIOS 30
 #define TAM_LIBROS 10
-#define TAM_AUTORES 10
-#define TAM_PRESTAMOS 10
-#include "Socios.h"
+#define TAM_AUTORES 5
+#define TAM_PRESTAMOS 30
+#include "Informes.h"
 
 int main()
 {
-    //Parcial Numero 1 primera parte 2019 1c
-    //Prestamos de un libreo
-    //Todos libreos de un autor
-    //Cual es el autor que se presto mas libros
-    //Todos los orestamos de hombres
-    //Todos los prestamos de mujeres
-    //Numeros de telefono de quien alquilo tal libro
 
     eSocio listaSocios[TAM_SOCIOS];
     eLibro listaLibros[TAM_LIBROS];
@@ -28,28 +21,28 @@ int main()
     int opcion;
 
 
+    inicializar_Prestamo(listaPrestamos,TAM_PRESTAMOS);
     inicializar_Socios(listaSocios,TAM_SOCIOS);
     init_Autores(listaAutores,TAM_AUTORES);
     init_Libros(listaLibros,TAM_LIBROS);
-    inicializar_Prestamo(listaPrestamos,TAM_PRESTAMOS);
+
 
 
 
     do
     {
 
-        //Menu Primera parte
-        printf("Bienvenidos Al Primer ABM 2019\n");
-        printf("  ----ABM  Socios---- \n\n");
-        printf("1- Alta Socios \n");
-        printf("2- Listar Socios \n");
-        printf("3- Modificar Socios \n");
-        printf("4- Baja Socios \n");
-        printf("5- Listar Libros \n");
-        printf("6- Listar autores \n");
-        printf("7- Prestamos no hecho\n");
-        printf("8- Salir  \n\n");
-        printf("Ingrese opcion:   ");
+        system("color F0");
+        printf("  *** ABM  SociosParcial1 ***\n\n");
+        printf("1- Alta Socios\n");
+        printf("2- Listar Socios\n");
+        printf("3- Modificar Socios\n");
+        printf("4- Baja Socios\n");
+        printf("5- Prestamos\n");
+        printf("6- Informes\n\n");
+        printf("7- Hardcodear Datos\n\n");
+        printf("8- Salir\n\n");
+        printf("Ingrese opcion: ");
         fflush(stdin);
         scanf("%d", &opcion);
 
@@ -71,7 +64,7 @@ int main()
             }
             else
             {
-                printf("\nPrimero realize la alta de un empleado\n\n");
+                printf("\nPor favor cargue un socio antes de entrar\n\n");
 
             }
 
@@ -87,7 +80,7 @@ int main()
             }
             else
             {
-                printf("\nPrimero realize la alta de un empleado\n\n");
+                printf("\nPor favor cargue un socio antes de entrar\n\n");
 
             }
 
@@ -104,41 +97,54 @@ int main()
             }
             else
             {
-                printf("\nPrimero realize la alta de un empleado\n\n");
+                printf("\nPor favor cargue un socio antes de entrar\n\n");
 
             }
 
 
             break;
-        case 5:
-            mostrar_Libros(listaLibros,TAM_LIBROS);
-            break;
-        case 6:
-            mostrar_Autores(listaAutores,TAM_AUTORES);
-            break;
-
-        case 7:
-            if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
+            case 5:
+             if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
             {
                 system("cls");
 
-                alta_Prestamos(listaPrestamos,listaSocios,listaLibros,TAM_SOCIOS,TAM_LIBROS,TAM_PRESTAMOS);
+                menu_Prestamos(listaPrestamos,TAM_PRESTAMOS,listaSocios,TAM_SOCIOS,listaLibros,TAM_LIBROS,listaAutores,TAM_AUTORES);
 
 
             }
             else
             {
-                printf("\nPrimero realize la alta de un empleado\n\n");
+                printf("\nPor favor cargue un socio antes de entrar\n\n");
 
             }
 
 
             break;
-        case 8:
+            case 6:
+             if(hay_Socios_Cargados(listaSocios,TAM_SOCIOS)==0)
+             {
+
+             menu_Informe(listaPrestamos,TAM_PRESTAMOS,listaSocios,TAM_SOCIOS,listaLibros,TAM_LIBROS,listaAutores,TAM_AUTORES);
+
+             }
+
+            else
+            {
+                printf("\nPor favor cargue un socio antes de entrar\n\n");
+
+            }
+            break;
+        case 7:
+           init_Socios(listaSocios,TAM_SOCIOS);
+          init_Prestamo(listaPrestamos,TAM_PRESTAMOS);
+
+            printf("SOCIOS Y PRESTAMOS HARDCODEADOS\n");
+            break;
+             case 8:
             printf("\nADIOS\n");
             break;
         default:
-            printf("\nERROR! Por favor ingrese una opcion valida del 1 al 6\n");
+            printf("\nERROR! Por favor ingrese una opcion valida <1-8>\n");
             break;
 
         }
@@ -148,7 +154,7 @@ int main()
         system("cls");
 
     }
-    while(opcion!=6);
+    while(opcion!=8);
 
 
 
