@@ -437,3 +437,85 @@
 	<ctype.h>
 	"UTN_INPUT.h"
 
+1560454428 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Autores.h"
+
+1560454428 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\autores.h
+	"Autores.h"
+	"UTN_INPUT.h"
+	"Libros.h"
+
+1560454428 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\utn_input.h
+
+1560454428 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\libros.h
+	"Autores.h"
+	"UTN_INPUT.h"
+
+1561403286 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Informes.h"
+
+1561402955 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\informes.h
+	"Autores.h"
+	"Libros.h"
+	"Socios.h"
+	"Prestamos.h"
+	"UTN_INPUT.h"
+
+1560454428 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\socios.h
+	"UTN_INPUT.h"
+
+1560454428 c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\prestamos.h
+	"UTN_INPUT.h"
+	"Autores.h"
+	"Libros.h"
+	"Socios.h"
+
+1560454428 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Libros.h"
+
+1561336208 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Prestamos.h"
+
+1560454428 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Socios.h"
+
+1560454428 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561334788 source:c:\users\dani\desktop\cosas facultad\marinibox-master\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Informes.h"
+

@@ -6,6 +6,7 @@
 #define OCUPADO 0
 #define VACIO 1
 #include "Informes.h"
+#define TAM_PRES 30
 
 void menu_Informe(ePrestamo listaPrestamos[],int tamPrestamos,eSocio listaSocios[],int tamSocios,eLibro listaLibros[],int TamLibros,eAutores listaAutores[],int tamAutor)
 {
@@ -36,12 +37,14 @@ void menu_Informe(ePrestamo listaPrestamos[],int tamPrestamos,eSocio listaSocios
         {
         case 1:
 
-            promedio_Fecha(listaPrestamos,tamPrestamos);
+            printf("\nEl total de prestamos es: %d\n",cantidadPrestamos(listaPrestamos, TAM_PRES));
+            printf("\nEl promedio diario de prestamos es: %.2f\n\n",promedioPrestamos(listaPrestamos, TAM_PRES));
+            system("pause");
 
             break;
         case 2:
-
-            printf("vacio");
+            printf("\nEl numero de dias que no alcanzan el promedio de prestamos es: %d\n\n",verificarPromedioPrestamos(listaPrestamos, TAM_PRES));
+            system("pause");
             break;
         case 3:
             listar_Socio_Libro(listaPrestamos,tamPrestamos,listaLibros,TamLibros,listaSocios,tamSocios,listaAutores,tamAutor);
@@ -454,7 +457,7 @@ void promedio_Fecha(ePrestamo listaPrestamos[],int tamPrestamo)
 
 
 
-    eFecha auxFecha;
+   // eFecha auxFecha;
 
     int contador=0;
 
@@ -463,12 +466,12 @@ void promedio_Fecha(ePrestamo listaPrestamos[],int tamPrestamo)
     {
         if(listaPrestamos[i].isEmpty==OCUPADO)
         {
-            auxFecha=listaPrestamos[i].fechaPrestamo;
+//            auxFecha=listaPrestamos[i].fechaPrestamo;
             break;
 
             for(int j=0; j<tamPrestamo;j++)
             {
-                if(auxFecha==listaPrestamos[j].fechaPrestamo)
+//                if(auxFecha==listaPrestamos[j].fechaPrestamo)
                 {
                     contador++;
                 }
@@ -481,3 +484,119 @@ void promedio_Fecha(ePrestamo listaPrestamos[],int tamPrestamo)
 }
 
 
+
+int cantidadPrestamos(ePrestamo prestamos[], int tamP)
+{
+    int cantidadP=0;
+
+    for (int i=0; i<tamP; i++)
+    {
+        if(prestamos[i].isEmpty)
+        {
+            cantidadP++;
+        }
+    }
+    return cantidadP;
+}
+
+int ordenarPrestamos(ePrestamo prestamos[], int tamP)
+{
+    ePrestamo pAux;
+
+    for (int i=0; i<tamP-1; i++)
+    {
+        for(int j=i+1; j<tamP; j++)
+        {
+            if((prestamos[i].fechaPrestamo.anio>prestamos[j].fechaPrestamo.anio)||(prestamos[i].fechaPrestamo.anio==prestamos[j].fechaPrestamo.anio && prestamos[i].fechaPrestamo.mes>prestamos[j].fechaPrestamo.mes)||(prestamos[i].fechaPrestamo.anio==prestamos[j].fechaPrestamo.anio && prestamos[i].fechaPrestamo.mes==prestamos[j].fechaPrestamo.mes && prestamos[i].fechaPrestamo.dia>prestamos[j].fechaPrestamo.dia))
+            {
+                pAux = prestamos[j];
+                prestamos[j]=prestamos[i];
+                prestamos[i]=pAux;
+            }
+        }
+    }
+    return 1;
+}
+
+int mostrarPrestamos(ePrestamo prestamos[], int tamP)
+{
+    system("cls");
+    printf("\nPrestamos registrados:\n");
+    printf("ID ID Socio ID Libro Fecha\n");
+    for (int i=0; i<tamP; i++)
+    {
+        if(prestamos[i].isEmpty)
+        {
+            printf("%d\t%d\t%d\t%d/%d/%d\n",prestamos[i].CodigoPrestamo,prestamos[i].CodigoSocio,prestamos[i].CodigoLibro,prestamos[i].fechaPrestamo    .dia,prestamos[i].fechaPrestamo.mes,prestamos[i].fechaPrestamo.anio);
+
+        }
+    }
+    return 1;
+}
+
+float promedioPrestamos(ePrestamo prestamos[], int tamP)
+{
+    int cantidadP;
+    int fechasDif=1;
+    float promedio;
+
+    cantidadP=cantidadPrestamos(prestamos,tamP);
+
+    ordenarPrestamos(prestamos,tamP);
+
+    for (int i=0; i<tamP-1; i++)
+    {
+        for(int j = i+1; j<tamP; j++)
+        {
+            if((prestamos[i].isEmpty && prestamos[j].isEmpty)&&(prestamos[i].fechaPrestamo.dia!=prestamos[j].fechaPrestamo.dia || prestamos[i].fechaPrestamo.mes!=prestamos[j].fechaPrestamo.mes || prestamos[i].fechaPrestamo.anio!=prestamos[j].fechaPrestamo.anio))
+            {
+                i=j;
+                fechasDif++;
+            }
+        }
+    }
+    promedio=(float)cantidadP/fechasDif;
+
+    return promedio;
+}
+
+
+int verificarPromedioPrestamos(ePrestamo prestamos[], int tamP)
+{
+    int contNoPromedio=0;
+    float contPrestamos=1;
+    float promedio;
+
+    promedio = promedioPrestamos(prestamos, tamP);
+
+    for (int i=0; i<tamP-1; i++)
+    {
+        for(int j = i+1; j<tamP; j++)
+        {
+            if(prestamos[i].isEmpty && prestamos[j].isEmpty)
+            {
+                if(prestamos[i].fechaPrestamo.dia==prestamos[j].fechaPrestamo.dia && prestamos[i].fechaPrestamo.mes==prestamos[j].fechaPrestamo.mes && prestamos[i].fechaPrestamo.anio==prestamos[j].fechaPrestamo.anio)
+                {
+                    contPrestamos++;
+                }
+                else
+                {
+                    i=j;
+                    if (contPrestamos<promedio)
+                    {
+                        contNoPromedio++;
+                    }
+                    contPrestamos = 1;
+                }
+            }
+        }
+    }
+
+    if((prestamos[tamP-1].isEmpty && prestamos[tamP-2].isEmpty) && (prestamos[tamP-1].fechaPrestamo.dia!=prestamos[tamP-2].fechaPrestamo.dia || prestamos[tamP-1].fechaPrestamo.mes!=prestamos[tamP-2].fechaPrestamo.mes || prestamos[tamP-1].fechaPrestamo.anio!=prestamos[tamP-2].fechaPrestamo.anio)&&(promedio>1))
+    {
+        contNoPromedio++;
+    }
+
+
+    return contNoPromedio;
+}

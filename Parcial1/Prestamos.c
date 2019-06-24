@@ -280,12 +280,6 @@ int alta_Prestamos(ePrestamo listaPrestamos[],int tamPrestamo,eSocio listaSocio[
 
 
 
-        fflush(stdin);
-        getValidInt("Esta seguro que quiere darle de alta a este Prestamo? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
-
-        if(respuesta==1)
-        {
-
             listaPrestamos[indice].isEmpty = OCUPADO;
 
 
@@ -293,17 +287,11 @@ int alta_Prestamos(ePrestamo listaPrestamos[],int tamPrestamo,eSocio listaSocio[
 
             contadorPrestamos=sumarPrestamo(1);
             printf("Alta Prestamo exitosa!!!\n\n");
-            printf("%d",contadorPrestamos);
+            printf("\nTotal de prestamos hasta ahora: %d",contadorPrestamos);
 
             myReturn=0;
 
-        }
-        else
-        {
 
-            printf("alta cancelada");
-
-        }
     }
 
     return myReturn;

@@ -136,7 +136,7 @@ int main()
             break;
         case 7:
            init_Socios(listaSocios,TAM_SOCIOS);
-          init_Prestamo(listaPrestamos,TAM_PRESTAMOS);
+           init_Prestamo(listaPrestamos,TAM_PRESTAMOS);
 
             printf("SOCIOS Y PRESTAMOS HARDCODEADOS\n");
             break;

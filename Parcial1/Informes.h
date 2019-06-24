@@ -136,7 +136,11 @@ void menu_Informe(ePrestamo listaPrestamos[],int tamPrestamos,eSocio listaSocios
 
 
 
-
+void promedio_Fecha(ePrestamo listaPrestamos[],int tamPrestamo);
+int cantidadPrestamos(ePrestamo prestamos[], int tamP);
+int ordenarPrestamos(ePrestamo prestamos[], int tamP);
+int mostrarPrestamos(ePrestamo prestamos[], int tamP);
+float promedioPrestamos(ePrestamo prestamos[], int tamP);
 
 
 
