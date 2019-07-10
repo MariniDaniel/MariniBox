@@ -1,0 +1,205 @@
+# depslib dependency file v1.0
+1561504901 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561505185 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1561502377 c:\users\lautaro\desktop\nueva carpeta\ejemplo\linkedlist.h
+
+1561504466 c:\users\lautaro\desktop\nueva carpeta\ejemplo\employee.h
+
+1561435954 c:\users\lautaro\desktop\nueva carpeta\ejemplo\parser.h
+
+1561252546 c:\users\lautaro\desktop\nueva carpeta\ejemplo\utn_input.h
+
+1561504466 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561502377 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561437890 c:\users\lautaro\desktop\nueva carpeta\ejemplo\controller.h
+
+1561437661 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561504466 source:c:\users\lautaro\desktop\nueva carpeta\ejemplo\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561502377 source:c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561502377 c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\linkedlist.h
+
+1561505552 source:c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561505551 c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\controller.h
+
+1561504466 c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\employee.h
+
+1561252546 c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\utn_input.h
+
+1561437661 source:c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561435954 c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\parser.h
+
+1561504466 source:c:\users\lautaro\desktop\nueva carpeta\practica parcial 2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561649619 source:c:\users\lautaro\desktop\practica parcial 2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561649003 c:\users\lautaro\desktop\practica parcial 2\employee.h
+
+1561252546 c:\users\lautaro\desktop\practica parcial 2\utn_input.h
+
+1561502377 source:c:\users\lautaro\desktop\practica parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561502377 c:\users\lautaro\desktop\practica parcial 2\linkedlist.h
+
+1561649355 source:c:\users\lautaro\desktop\practica parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561649326 c:\users\lautaro\desktop\practica parcial 2\parser.h
+
+1561649881 source:c:\users\lautaro\desktop\practica parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561648757 c:\users\lautaro\desktop\practica parcial 2\controller.h
+
+1561649881 source:c:\users\lautaro\desktop\practica parcial 2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561649202 source:c:\users\lautaro\desktop\practica parcial 2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1561649202 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1561502377 c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\linkedlist.h
+
+1561649003 c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\employee.h
+
+1561649326 c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\parser.h
+
+1561252546 c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\utn_input.h
+
+1561649619 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561502377 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561649881 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1561648757 c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\controller.h
+
+1561649355 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561649881 source:c:\users\dani\desktop\parcial 2\parcial 2\practica parcial 2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
