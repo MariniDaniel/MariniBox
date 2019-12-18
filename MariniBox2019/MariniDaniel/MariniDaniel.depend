@@ -1,0 +1,169 @@
+# depslib dependency file v1.0
+1562689547 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1562689504 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\validaciones.h
+
+1563221540 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+
+1563220895 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\linkedlist.h
+
+1563220895 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\llamada.h
+
+1563124469 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563124816 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\controller.h
+
+1563030072 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\parser.h
+
+1563221449 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563031271 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563221283 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\luquezeliseo\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Llamada.h"
+	"Validaciones.h"
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563324038 c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\linkedlist.h
+
+1563324038 c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\controller.h
+
+1563324038 c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\llamada.h
+
+1563324038 c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\parser.h
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Llamada.h"
+	"Validaciones.h"
+
+1563324038 c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\validaciones.h
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563324038 source:c:\users\dani\desktop\prog1lab1\practicaayuda\finaleslab1\marinidaniel\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1563324038 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563324038 c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\linkedlist.h
+
+1563324038 c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\controller.h
+
+1563324038 c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\llamada.h
+
+1563324038 c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\parser.h
+
+1563324038 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+
+1563324038 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Llamada.h"
+	"Validaciones.h"
+
+1563324038 c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\validaciones.h
+
+1563324038 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Llamada.h"
+	"Parser.h"
+
+1563324038 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1576175118 source:c:\users\e5eefa3\desktop\marinibox2019\marinidaniel\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Llamada.h"
+	"Parser.h"
+

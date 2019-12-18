@@ -1,0 +1,225 @@
+# depslib dependency file v1.0
+1561560199 source:d:\pl1-2\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1561565501 d:\pl1-2\parcial2\linkedlist.h
+
+1561556845 d:\pl1-2\parcial2\dominio.h
+
+1561565500 d:\pl1-2\parcial2\parser.h
+
+1561560154 d:\pl1-2\parcial2\utn_input.h
+
+1561559306 source:d:\pl1-2\parcial2\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Dominio.h"
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561560199 source:d:\pl1-2\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561559584 source:d:\pl1-2\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Dominio.h"
+	"UTN_INPUT.h"
+
+1561557025 d:\pl1-2\parcial2\controller.h
+
+1561559583 source:d:\pl1-2\parcial2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561560237 source:d:\pl1-2\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+
+1561560199 source:c:\users\alumno\desktop\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1561565501 c:\users\alumno\desktop\parcial2\linkedlist.h
+
+1561556845 c:\users\alumno\desktop\parcial2\dominio.h
+
+1561565500 c:\users\alumno\desktop\parcial2\parser.h
+
+1561560154 c:\users\alumno\desktop\parcial2\utn_input.h
+
+1561559306 source:c:\users\alumno\desktop\parcial2\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Dominio.h"
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1561560199 source:c:\users\alumno\desktop\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561559584 source:c:\users\alumno\desktop\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Dominio.h"
+	"UTN_INPUT.h"
+
+1561557025 c:\users\alumno\desktop\parcial2\controller.h
+
+1561560237 source:c:\users\alumno\desktop\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+
+1561559583 source:c:\users\alumno\desktop\parcial2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1570246226 c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\linkedlist.h
+
+1570246226 c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\dominio.h
+
+1570246226 c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\parser.h
+
+1570246226 c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\utn_input.h
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Dominio.h"
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Dominio.h"
+	"UTN_INPUT.h"
+
+1570246226 c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\controller.h
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+
+1570246226 source:c:\users\dani\desktop\prog1lab1\practicaayuda\parcial2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1570246226 c:\users\e5eefa3\desktop\marinibox2019\parcial2\linkedlist.h
+
+1570246226 c:\users\e5eefa3\desktop\marinibox2019\parcial2\dominio.h
+
+1570246226 c:\users\e5eefa3\desktop\marinibox2019\parcial2\parser.h
+
+1570246226 c:\users\e5eefa3\desktop\marinibox2019\parcial2\utn_input.h
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Dominio.h"
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Dominio.h"
+	"UTN_INPUT.h"
+
+1570246226 c:\users\e5eefa3\desktop\marinibox2019\parcial2\controller.h
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Dominio.h"
+	"parser.h"
+
+1570246226 source:c:\users\e5eefa3\desktop\marinibox2019\parcial2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
